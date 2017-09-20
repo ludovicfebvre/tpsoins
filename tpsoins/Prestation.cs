@@ -12,6 +12,12 @@ namespace tpsoins
         private DateTime dateSoin;
         private Intervenant l_Intervenant;
 
+        /// <summary>
+        /// Constructeur de la classe Prestation
+        /// </summary>
+        /// <param name="unLibelle"></param>
+        /// <param name="uneDate"></param>
+        /// <param name="unIntervenant"></param>
         public Prestation(string unLibelle, DateTime uneDate, Intervenant unIntervenant)
         {
             this.libelle = unLibelle;
@@ -21,6 +27,11 @@ namespace tpsoins
 
         }
 
+        /// <summary>
+        /// Fonction qui compare 2 dates de prestations
+        /// </summary>
+        /// <param name="unePrestation"></param>
+        /// <returns>int</returns>
         public int compareTo(Prestation unePrestation)
         {
             if (this.dateSoin.Equals(unePrestation.getDateSoin()))
@@ -36,6 +47,10 @@ namespace tpsoins
             }
         }
 
+        /// <summary>
+        /// Accesseur sur le DateTime datesoin
+        /// </summary>
+        /// <returns></returns>
         public DateTime getDateSoin()
         {
             return this.dateSoin;
@@ -46,11 +61,15 @@ namespace tpsoins
             return this.l_Intervenant;
         }
         
+        /// <summary>
+        /// Affiche les elements de la classe prestation
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string prestation = libelle + " - " + dateSoin.Day + "/" + dateSoin.Month + "/";
             prestation += +dateSoin.Year + " " + dateSoin.Hour + ":" + dateSoin.Minute + ":" + dateSoin.Second + " - ";
-            prestation += "Intervenant : Dr " + l_Intervenant.ToString();
+            prestation += "Intervenant : Dr" + l_Intervenant.ToString() + "\n";
             return prestation;
         }
     }
